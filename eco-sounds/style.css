@@ -27,7 +27,7 @@ ul {
 .logo {
   width: 3.125rem;
   height: 3.125rem;
-  background: url(eco-sounds/assets/svg/logo.svg);
+  background: url(assets/svg/logo.svg);
   background-size: cover;
   transition: 500ms;
 }
@@ -51,13 +51,13 @@ ul {
   align-items: center;
   width: 100%;
   height: calc(100vh - var(--calcheight)); 
-  background: url(eco-sounds/assets/img/solovey.jpg);
+  background: url(assets/img/solovey.jpg);
   background-size: cover;
 }
 .playpause {
   width: 6.125rem;
   height: 6.125rem;
-  background: url(eco-sounds/assets/svg/play.svg);
+  background: url(assets/svg/play.svg);
   background-size: cover;
   border: none;
   transition: 500ms;
@@ -81,7 +81,7 @@ ul {
 .school-logo{
   width: 8.125rem;
   height: 3.125rem;
-  background: url(eco-sounds/assets/svg/rss.svg);
+  background: url(assets/svg/rss.svg);
   background-size: cover;
   transition: 500ms;
 }
