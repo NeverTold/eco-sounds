@@ -8,7 +8,6 @@ let isPlay = false;
 
 const toggleActiveClass = (element) => {
     element.classList.toggle('active');
-    console.log(element);
 }
 const toggleActiveMenuClass = (element) => {
     element.classList.toggle('active-menu');
@@ -23,9 +22,7 @@ const removeActiveMenuClass = (element) => {
 }
 
 const handleClick = (event) => {
-    console.log (event);
     const element = event.target;
-    console.log(element);
     if (element.classList.contains('logo')&&!element.classList.contains('active')){
         toggleActiveClass (element);
         for (let leng of menuItem){
@@ -33,7 +30,6 @@ const handleClick = (event) => {
         }
     }
     else if (element.classList.contains('nav-item')&&!element.classList.contains('active')){
-        console.log(element);
         if (logo.classList.contains('active')){
             removeActiveClass (logo)
         } else for (let len of menuItem){
@@ -62,13 +58,20 @@ function pauseAudio() {
     audio.pause();
   }
 
+const togglePauseClass = (element) => {
+    element.classList.toggle('pause')
+}
+  
 const audioHandler = (event) =>{
+    const element = event.target;
     if (!isPlay){
         playAudio();
         isPlay = true;
+        togglePauseClass(element);
     } else {
         pauseAudio();
         isPlay = false;
+        togglePauseClass(element);
     }
 }
 playandpause.addEventListener ('click', audioHandler);

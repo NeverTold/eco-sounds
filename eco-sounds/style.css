@@ -70,6 +70,11 @@ ul {
   transition: 500ms;
   cursor: pointer;
 }
+.pause {
+  mask: url(assets/svg/pause.svg) no-repeat center;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
 .active {
   background-color: #F8FF00 ;
   filter: hue-rotate(28deg);
