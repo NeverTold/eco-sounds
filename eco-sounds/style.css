@@ -27,9 +27,12 @@ ul {
 .logo {
   width: 3.125rem;
   height: 3.125rem;
-  background: url(assets/svg/logo.svg);
-  background-size: cover;
+  background-color: #fff;
+  mask: url(assets/svg/logo.svg) no-repeat center;
+  -webkit-mask-size: cover;
+  mask-size: cover;
   transition: 500ms;
+  cursor: pointer;
 }
 
 .nav-menu {
@@ -40,10 +43,12 @@ ul {
 .nav-item {
   margin: 0 1.25rem;
   transition: 500ms;
+  cursor: pointer;
 }
 .nav-item:hover, .footer-data a:hover{
   color: #bdae82;
   transition: 500ms;
+  
 }
 .player {
   display: flex;
@@ -57,10 +62,21 @@ ul {
 .playpause {
   width: 6.125rem;
   height: 6.125rem;
-  background: url(assets/svg/play.svg);
-  background-size: cover;
+  background-color: #bdae82;
+  mask: url(assets/svg/play.svg) no-repeat center;
+  -webkit-mask-size: cover;
+  mask-size: cover;
   border: none;
   transition: 500ms;
+  cursor: pointer;
+}
+.active {
+  background-color: #F8FF00 ;
+  filter: hue-rotate(28deg);
+}
+.active-menu {
+  color: #F8FF00 ;
+  filter: hue-rotate(28deg);
 }
 .footer-data {
   display: flex;
@@ -84,7 +100,9 @@ ul {
   background: url(assets/svg/rss.svg);
   background-size: cover;
   transition: 500ms;
+  cursor: pointer;
 }
 .logo:hover, .school-logo:hover, .playpause:hover{
   filter: invert(50%);
+  
 }
