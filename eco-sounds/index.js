@@ -46,6 +46,12 @@ function playPrev(){
     playAudio(playNum);
 }
 
+const seekHandler = (event)=>{
+    audio.currentTime = event.target.value;
+    progressBar.value = audio.currentTime;
+    currentSongTime.textContent = getTimeCodeFromNum(audio.currentTime);
+}
+
 const togglePauseClass = (element) => {
     element.classList.toggle('pause')
 }
@@ -66,6 +72,7 @@ const audioHandler = (event) =>{
 play.addEventListener ('click', audioHandler);
 next.addEventListener ('click', playNext);
 prev.addEventListener ('click', playPrev);
+progressBar.addEventListener('click', seekHandler);
 
 // загрузка продолжительности песни
 audio.addEventListener(
@@ -81,9 +88,7 @@ audio.addEventListener(
 // каждые пол секунды обнавление времени песни и прогресс бара
   setInterval(() => {
     progressBar.value = audio.currentTime;
-    currentSongTime.textContent = getTimeCodeFromNum(
-      audio.currentTime
-    );
+    currentSongTime.textContent = getTimeCodeFromNum(audio.currentTime);
   }, 500);
 // представление изначальной длины песни в секундах в формате часы:минуты:секунды с проверкой на наличие часов
   function getTimeCodeFromNum(num) {
