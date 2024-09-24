@@ -3,31 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nature Sounds</title>
+    <title>Audio Player</title>
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets//favicon.ico">
+    <link rel="icon" href="assets/svg/favicon.ico">
 </head>
 <body>
-    <header class="header">
-        <Div class="wrapper">
-            <div class="logo active"></div>
-            <nav class="menu">
-                <ul class="nav-menu">
-                    <li class="nav-item">Соловей</li>
-                    <li class="nav-item">Дрозд</li>
-                    <li class="nav-item">Малиновка</li>
-                    <li class="nav-item">Жаворонок</li>
-                    <li class="nav-item">Славка</li>
-                </ul>
-            </nav>
-        </Div>
-    </header>
-    <main class="player">
-        <button class="playpause"></button>
-    </main>
-    <footer class="footer">
-        <div class="wrapper">
+    <div class="wrapper">
+        <img src="assets/img/lemonade.png" alt="Cover" class="thumbunals">
+        <div class="player column-wrapper">
+            <div class="player-controls row-wrapper">
+                <button class="play"></button>
+                <div class="artist-wrapper column-wrapper">
+                    <div class="artist">Beyonce</div>
+                    <div class="song">Don't Hurt Yourself</div>
+                </div>
+                <div class="column-wrapper">
+                    <button class="nextsong button-size"></button>
+                    <button class="prevsong button-size"></button>
+                </div>
+            </div>
+            <div class="time column-wrapper">
+                <div class="duration-time">3:53</div>
+                <input type="range" name="time" id="songtime" min = "0" max ="" value="0">
+                <div class="current-time">0</div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer"></footer>
+        <div class="footer-wrapper">
             <div class="footer-data">
                 <p>@</p>
                 <p>2024</p>
