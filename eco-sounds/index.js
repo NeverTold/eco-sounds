@@ -14,6 +14,7 @@ const artist = ['Beyonce','Dua Lipa'];
 const song = ["Don't Hurt Yourself", "Don't Start Now"];
 let isPlay = false;
 let playNum = 0;
+let currentPlaytime= 0;
 
 const audio = new Audio();
 
@@ -24,7 +25,7 @@ function playAudio() {
         playNum = 0;
     }
     audio.src = songs[playNum];
-    audio.currentTime = 0;
+    audio.currentTime = currentPlaytime;
     audio.play(); 
     document.body.style.background = 'url('+ thumbunals[playNum]+')';
     playerImg.src = thumbunals[playNum];
@@ -34,15 +35,18 @@ function playAudio() {
 
 function pauseAudio() {
     audio.pause();
+    currentPlaytime = audio.currentTime;
   }
 
 function playNext() {
     playNum +=1;
+    currentPlaytime = 0;
     playAudio(playNum);
 }
 
 function playPrev(){
     playNum -=1;
+    currentPlaytime = 0;
     playAudio(playNum);
 }
 
