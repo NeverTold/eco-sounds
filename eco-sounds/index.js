@@ -33,6 +33,19 @@ function playAudio() {
     songName.textContent = song[playNum];
 }
 
+function changeTrack () {
+    if (playNum <0) {
+        playNum = songs.length -1;
+    } else if (playNum >= songs.length) {
+        playNum = 0;
+    }
+    audio.src = songs[playNum];
+    audio.currentTime = currentPlaytime;
+    document.body.style.background = 'url('+ thumbunals[playNum]+')';
+    playerImg.src = thumbunals[playNum];
+    artistName.textContent = artist[playNum];
+    songName.textContent = song[playNum];
+}
 function pauseAudio() {
     audio.pause();
     currentPlaytime = audio.currentTime;
@@ -41,13 +54,17 @@ function pauseAudio() {
 function playNext() {
     playNum +=1;
     currentPlaytime = 0;
-    playAudio(playNum);
+    if (isPlay){
+    playAudio(playNum);}
+    else {changeTrack(playNum)};
 }
 
 function playPrev(){
     playNum -=1;
     currentPlaytime = 0;
-    playAudio(playNum);
+    if (isPlay){
+      playAudio(playNum);}
+    else {changeTrack(playNum)};
 }
 
 const seekHandler = (event)=>{
@@ -79,8 +96,7 @@ prev.addEventListener ('click', playPrev);
 progressBar.addEventListener('click', seekHandler);
 
 // загрузка продолжительности песни
-audio.addEventListener(
-    "loadeddata",
+audio.addEventListener("loadeddata",
     () => {
       audioPlayer.querySelector(".duration-time").textContent = getTimeCodeFromNum(
         audio.duration
